@@ -309,7 +309,7 @@ a.github {
 }
 
 a.gplusicon {
-	background: url(http://ssl.gstatic.com/s2/oz/images/faviconr3.ico) no-repeat 1px;
+	background: none;
 }
 
 a.buttons:hover {
