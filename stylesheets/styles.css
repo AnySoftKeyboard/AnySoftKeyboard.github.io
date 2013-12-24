@@ -308,6 +308,10 @@ a.github {
 	background: url(../images/octocat-small.png) no-repeat 1px;
 }
 
+a.gplusicon {
+	background: url(http://ssl.gstatic.com/s2/oz/images/faviconr3.ico) no-repeat 1px;
+}
+
 a.buttons:hover {
 	color: #fff;
 	text-decoration: none;
