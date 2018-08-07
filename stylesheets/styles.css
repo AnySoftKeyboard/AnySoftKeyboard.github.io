@@ -141,7 +141,7 @@ img {
   position: relative;
   max-width: 650px;
   padding: 5px;
-  margin: 10px 0 32px 0;
+  margin: 10px 0 10px 0;
   border: 1px solid #ccc;
 }
 
@@ -194,6 +194,8 @@ th {
 td {
   padding: 10px;
   background: #ccc;
+  text-align: center;
+  vertical-align: middle;
  }
 
 
