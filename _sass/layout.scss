@@ -172,3 +172,9 @@ blockquote:before {
 	}
 
 }
+
+.not-full {
+	width: auto !important;
+	margin: 15px;
+	display: inline-block;
+}
