@@ -133,7 +133,6 @@ blockquote:before {
 		top: -1000%;
 		bottom: -1000%;
 		margin: auto;
-		width: 300px;
 	}
 }
 
@@ -177,4 +176,16 @@ blockquote:before {
 	width: auto !important;
 	margin: 15px;
 	display: inline-block;
+}
+
+.not-full-icon {
+	display: inline-block;
+	width: auto !important;
+	margin-top: -5px;
+	margin-left: 10%;
+	float: right;
+}
+
+.languages-list {
+	margin-bottom: 40px;
 }
