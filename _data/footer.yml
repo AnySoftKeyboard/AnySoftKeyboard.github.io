@@ -13,3 +13,7 @@
     link: /feed.xml
     social_icon: RSS
     new_window: false
+  - name: GitHub
+    link: https://github.com/AnySoftKeyboard/AnySoftKeyboard
+    social_icon: GitHub
+    new_window: true
