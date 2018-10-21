@@ -1,0 +1,15 @@
+- links:
+  - name: Blog
+    link: /blog/
+  - name: About
+    link: /about/
+- links:
+  - name: Download
+    link: /download/
+  - name: Languages
+    link: /languages/
+- links:
+  - name: RSS
+    link: /feed.xml
+    social_icon: RSS
+    new_window: false
