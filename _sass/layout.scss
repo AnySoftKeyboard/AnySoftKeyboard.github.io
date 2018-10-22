@@ -206,6 +206,10 @@ blockquote:before {
 
 .card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  -ms-transform: translate(2px, -2px); /* IE 9 */
+  -webkit-transform: translate(2px, -2px); /* Safari */
+  transform: translate(2px, -2px);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #error {
