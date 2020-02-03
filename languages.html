@@ -194,5 +194,11 @@ languages:
 	</p>
 	</div>
 	{% endfor %}
-	<p>Number of languages available: 41</p>
+
+	{% assign total = 0 %}
+	{% for language in page.languages %}
+	  {% assign total = total | plus: 1 %}
+	{% endfor %}
+
+	<p>Number of languages available: {{ total }}</p>
 </section>
