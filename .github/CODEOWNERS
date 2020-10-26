@@ -1,0 +1,6 @@
+#only organization owner can change the license
+/LICENSE @menny
+#core infra structure team can approve github configuration
+/.github @AnySoftKeyboard/infra
+/.github/CODEOWNERS @AnySoftKeyboard/infra
+* @AnySoftKeyboard/web
