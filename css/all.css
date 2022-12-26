@@ -3544,6 +3544,12 @@ readers do not read off random characters that represent icons */
 .fa-twitter-square:before {
   content: "\f081"; }
 
+.fa-mastodon:before {
+  content: "\f099"; }
+
+.fa-mastodon-square:before {
+  content: "\f081"; }
+
 .fa-typo3:before {
   content: "\f42b"; }
 
