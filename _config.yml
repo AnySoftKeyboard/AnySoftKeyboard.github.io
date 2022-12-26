@@ -11,10 +11,10 @@ description: Official website of AnySoftKeyboard, the open source Android keyboa
 author:
   name:
   email:
-  twitter: # twitter username without the @ symbol
+  twitter: @anysoftkeyboard
 social:
-  name: Google Plus
-  links: https://plus.google.com/communities/106050362696748221135
+  name: Mastodon
+  links: https://hachyderm.io/@anysoftkeyboard
     - 
 
 # -----
