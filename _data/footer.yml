@@ -11,3 +11,7 @@
     link: https://github.com/AnySoftKeyboard/AnySoftKeyboard
     social_icon: GitHub
     new_window: true
+  - name: Social
+    link: https://hachyderm.io/@anysoftkeyboard
+    social_icon: Mastodon
+    new_window: true
