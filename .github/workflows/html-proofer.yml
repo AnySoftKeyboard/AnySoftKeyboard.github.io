@@ -1,0 +1,30 @@
+name: HTMLProofer
+
+on:
+  pull_request:
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # Runs bundle install and caches gems
+
+      - name: Cache HTMLProofer results
+        uses: actions/cache@v3
+        with:
+          path: tmp/.htmlproofer
+          key: ${{ runner.os }}-htmlproofer-${{ github.head_ref || github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-htmlproofer-
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      - name: Run HTMLProofer
+        run: htmlproofer ./_site --allow-hash-href
