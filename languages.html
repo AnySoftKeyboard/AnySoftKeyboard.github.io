@@ -6,7 +6,7 @@ description: Below you'll find a list of language packs and where you can downlo
 <section>
 	{% for language in site.data.languages.languages %}
 	<div>
-	<p class="languages-list"><img src="{{ language.icon }}" alt="{{ language.name }} flag" style="height: 32px; width: auto; padding-right: 12px; vertical-align: middle;"> {{ language.name }}
+	<p class="languages-list"><span class="flag-container"><img src="{{ language.icon }}" alt="{{ language.name }} flag" class="language-flag" style="height: 32px; width: auto; vertical-align: middle;"></span> {{ language.name }}
 	
 	{% if language.github == nil %}
 	<img class="no-link-found not-full-icon" src="/images/github.png" width="32px" height="32px"/></a>

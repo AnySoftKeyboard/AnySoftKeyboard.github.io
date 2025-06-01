@@ -12,3 +12,15 @@
 @import "forms";
 @import "navigation";
 @import "footer";
+
+.flag-container {
+  display: inline-block;
+  width: 50px; /* Adjust as needed */
+  text-align: center;
+  margin-right: 12px;
+}
+
+.language-flag {
+  border: 1px solid black;
+  vertical-align: middle;
+}
