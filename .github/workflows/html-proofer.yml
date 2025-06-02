@@ -1,0 +1,22 @@
+name: Checks
+
+on:
+  pull_request:
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # Runs bundle install and caches gems
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      - name: Run HTMLProofer
+        run: bundle exec htmlproofer --allow-hash-href=true --ignore-status-codes=404 ./_site
