@@ -8,19 +8,19 @@ description: Below you'll find a list of language packs and where you can downlo
 	<div>
 	<p class="languages-list"><span class="flag-container"><img src="{{ language.icon }}" alt="{{ language.name }} flag" class="language-flag" style="height: 32px; width: auto; vertical-align: middle;"></span> {{ language.name }}
 	
-	{% if language.github == nil %}
+	{% if language.github == nil or language.github == "" %}
 	<img class="no-link-found not-full-icon" src="/images/github.png" width="32px" height="32px"/></a>
 	{% else %}
 	<a href="{{ language.github }}"><img class="not-full-icon" src="/images/github.png" alt="{{ language.name }} on github" width="32px" height="32px"/></a>
 	{% endif %}
 	
-	{% if language.f-droid == nil %}
+	{% if language.f-droid == nil or language.f-droid == "" %}
 	<img class="no-link-found not-full-icon" src="/images/fdroid.png" width="32px" height="32px"/></a>
 	{% else %}
 	<a href="{{ language.f-droid }}"><img class="not-full-icon" src="/images/fdroid.png" alt="{{ language.name }} on f-droid" width="32px" height="32px"/></a>
 	{% endif %}
 	
-	{% if language.play == nil %}
+	{% if language.play == ni or language.play == ""l %}
 	<img class="no-link-found not-full-icon" src="/images/play.png" width="32px" height="32px"/></a>
 	{% else %}
 	<a href="{{ language.play }}"><img class="not-full-icon" src="/images/play.png" alt="{{ language.name }} on Google Play Store" width="32px" height="32px"/></a>

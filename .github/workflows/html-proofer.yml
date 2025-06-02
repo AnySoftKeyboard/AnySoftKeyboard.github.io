@@ -27,6 +27,4 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer ./_site \
-            --allow-hash-href \
-            --ignore-urls "/f-droid.org/"
+        run: bundle exec htmlproofer ./_site --allow-hash-href --ignore-urls "/f-droid.org/"
