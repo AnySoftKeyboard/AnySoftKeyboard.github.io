@@ -15,12 +15,12 @@ description: Below you'll find a list of language packs and where you can downlo
 	{% endif %}
 	
 	{% if language.f-droid == nil or language.f-droid == "" %}
-	<img class="no-link-found not-full-icon" src="/images/fdroid.png" width="32px" height="32px"/></a>
+	<img class="no-link-found not-full-icon" src="/images/fdroid.png" width="32px" height="32px" alt="F-Droid icon"/></a>
 	{% else %}
 	<a href="{{ language.f-droid }}"><img class="not-full-icon" src="/images/fdroid.png" alt="{{ language.name }} on f-droid" width="32px" height="32px"/></a>
 	{% endif %}
 	
-	{% if language.play == ni or language.play == ""l %}
+	{% if language.play == nil or language.play == "" %}
 	<img class="no-link-found not-full-icon" src="/images/play.png" width="32px" height="32px"/></a>
 	{% else %}
 	<a href="{{ language.play }}"><img class="not-full-icon" src="/images/play.png" alt="{{ language.name }} on Google Play Store" width="32px" height="32px"/></a>

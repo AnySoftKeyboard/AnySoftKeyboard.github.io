@@ -1,0 +1,6 @@
+languages:
+- name: "Bbcodes"
+  play: "https://play.google.com/store/apps/details?id=com.anysoftkeyboard.quicktexts.bbcodes"
+  f-droid: ""
+  github: "https://github.com/AnySoftKeyboard/AnySoftKeyboard/tree/main/addons/quicktexts/bbcodes/apk"
+  icon: "https://raw.githubusercontent.com/AnySoftKeyboard/AnySoftKeyboard/refs/heads/main/addons/quicktexts/bbcodes/apk/flag/flag.png"
