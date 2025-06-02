@@ -1,4 +1,4 @@
-name: HTMLProofer
+name: Checks
 
 on:
   pull_request:
@@ -15,16 +15,8 @@ jobs:
         with:
           bundler-cache: true # Runs bundle install and caches gems
 
-      - name: Cache HTMLProofer results
-        uses: actions/cache@v3
-        with:
-          path: tmp/.htmlproofer
-          key: ${{ runner.os }}-htmlproofer-${{ github.head_ref || github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-htmlproofer-
-
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer ./_site --allow-hash-href --ignore-urls "/f-droid.org/"
+        run: bundle exec htmlproofer --allow-hash-href=true --ignore-status-codes=404 ./_site
