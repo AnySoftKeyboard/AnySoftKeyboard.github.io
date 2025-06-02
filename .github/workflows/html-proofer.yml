@@ -19,4 +19,4 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer --allow-hash-href=true --ignore-status-codes=404 ./_site
+        run: bundle exec htmlproofer --allow-hash-href=true ./_site
