@@ -14,13 +14,12 @@
 @import "footer";
 
 .flag-container {
-  display: inline-block;
-  width: 50px; /* Adjust as needed */
-  text-align: center;
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .language-flag {
-  border: 1px solid black;
+  height: 32px;
+  width: auto;
   vertical-align: middle;
+  border: 1px solid black;
 }
