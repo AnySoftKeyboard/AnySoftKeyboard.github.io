@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#6b21a8">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#7c3aed">
   
   {% seo %}
   {% feed_meta %}
@@ -14,27 +13,27 @@
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
   <link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
 </head>
-<body class="min-h-screen bg-white">
+<body class="min-h-screen bg-white font-sans text-gray-700 antialiased">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
-  <header class="section-gradient" role="banner">
-    <div class="max-w-6xl mx-auto px-4 py-4">
+  <header class="header-bg" role="banner">
+    <div class="max-w-6xl mx-auto px-4 py-3">
       <div class="flex items-center justify-between">
-        <a href="{{ site.baseurl }}/" class="z-10" aria-label="AnySoftKeyboard Home">
-          <img src="{{ site.baseurl }}/images/logo.svg" alt="AnySoftKeyboard" class="h-11 w-auto" width="76" height="44">
+        <a href="{{ site.baseurl }}/" class="flex items-center" aria-label="AnySoftKeyboard Home">
+          <img src="{{ site.baseurl }}/images/logo.svg" alt="AnySoftKeyboard" class="h-10 w-auto" width="76" height="40">
         </a>
         
         <!-- Mobile menu toggle -->
         <input type="checkbox" id="nav-toggle" class="hidden peer" aria-hidden="true">
-        <label for="nav-toggle" class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-white hover:bg-white/10 cursor-pointer z-10" aria-label="Toggle menu">
-          <svg class="w-6 h-6 peer-checked:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        <label for="nav-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 cursor-pointer z-20" aria-label="Toggle menu">
+          <svg class="w-6 h-6 block peer-checked:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           <svg class="w-6 h-6 hidden peer-checked:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
         </label>
         
         <!-- Navigation -->
-        <nav class="fixed lg:relative inset-0 lg:inset-auto section-gradient lg:bg-transparent flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-2 transform translate-x-full lg:translate-x-0 peer-checked:translate-x-0 transition-transform z-5" role="navigation" aria-label="Main navigation">
+        <nav class="fixed lg:static inset-0 lg:inset-auto header-bg lg:bg-transparent flex flex-col lg:flex-row items-center justify-center lg:justify-end gap-1 transform translate-x-full lg:translate-x-0 peer-checked:translate-x-0 transition-transform duration-200 z-10" role="navigation" aria-label="Main navigation">
           {% for link in site.data.navigation %}
-          <a href="{{ link.link }}" class="nav-link text-xl lg:text-sm"{% if page.url == link.link %} aria-current="page"{% endif %}{% if link.new_window %} target="_blank" rel="noopener noreferrer"{% endif %}>
+          <a href="{{ link.link }}" class="nav-link text-lg lg:text-sm"{% if page.url == link.link %} aria-current="page"{% endif %}{% if link.new_window %} target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ link.name }}
           </a>
           {% endfor %}
@@ -47,7 +46,7 @@
     {{ content }}
   </main>
   
-  <footer class="bg-gradient-to-b from-indigo-950 to-slate-950 text-white py-16" role="contentinfo">
+  <footer class="bg-gray-900 text-white py-12" role="contentinfo">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
         {% for column in site.data.footer %}
@@ -68,9 +67,9 @@
         {% endfor %}
       </div>
       <div class="border-t border-white/10 pt-6 text-center">
-        <p class="text-white/60 text-sm">
+        <p class="text-white/50 text-sm">
           &copy; {{ site.time | date: '%Y' }} AnySoftKeyboard &bull;
-          <a href="{{ site.baseurl }}/privacy-policy/" class="text-purple-400 hover:text-purple-300">Privacy Policy</a>
+          <a href="{{ site.baseurl }}/privacy-policy/" class="text-white/70 hover:text-white">Privacy Policy</a>
         </p>
       </div>
     </div>

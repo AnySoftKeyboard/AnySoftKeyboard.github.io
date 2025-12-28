@@ -1,30 +1,30 @@
 ---
 layout: default
 ---
-<section class="section-gradient text-white text-center py-12 md:py-16">
+<section class="hero-bg text-white text-center py-10 md:py-14">
   <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ page.title }}</h1>
-    <p class="text-white/80 mt-3">
+    <h1 class="text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
+    <p class="text-white/70 mt-3">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
       {% if page.author %} • {{ page.author }}{% endif %}
     </p>
   </div>
 </section>
 
-<article class="py-12 md:py-16 bg-white">
-  <div class="max-w-3xl mx-auto px-4 prose prose-lg prose-purple">
+<article class="py-10 md:py-14 bg-white">
+  <div class="max-w-3xl mx-auto px-4 prose">
     {{ content }}
     
     {% if page.author %}
     {% assign author = site.staff_members | where: "name", page.author | first %}
-    <aside class="not-prose mt-12 flex items-center gap-4 p-6 bg-purple-50 rounded-2xl">
+    <aside class="mt-12 flex items-center gap-4 p-5 bg-gray-50 rounded-xl border border-gray-200">
       {% if author.image_path %}
-      <img src="{{ author.image_path }}" alt="{{ author.name }}" loading="lazy" class="w-16 h-16 rounded-full" width="64" height="64">
+      <img src="{{ author.image_path }}" alt="{{ author.name }}" loading="lazy" class="w-14 h-14 rounded-full" width="56" height="56">
       {% endif %}
       <div>
-        <strong class="text-gray-900">{{ page.author }}</strong>
+        <strong class="text-gray-900 block">{{ page.author }}</strong>
         {% if author.position %}
-        <p class="text-gray-600 text-sm">{{ author.position }}</p>
+        <span class="text-gray-500 text-sm">{{ author.position }}</span>
         {% endif %}
       </div>
     </aside>

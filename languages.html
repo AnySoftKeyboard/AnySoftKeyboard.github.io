@@ -3,17 +3,17 @@ layout: default
 title: Language Packs
 description: Download language packs for AnySoftKeyboard. Support for 50+ languages with dictionaries and keyboards.
 ---
-<section class="section-gradient text-white text-center py-12 md:py-16">
+<section class="hero-bg text-white text-center py-10 md:py-14">
   <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl font-bold text-white">Available <span class="text-purple-200">Language Packs</span></h1>
-    <p class="text-lg text-white/90 mt-2">Download additional languages with keyboards and dictionaries</p>
+    <h1 class="text-3xl md:text-4xl font-bold">Available <span class="text-purple-200">Language Packs</span></h1>
+    <p class="text-lg text-white/80 mt-2">Download additional languages with keyboards and dictionaries</p>
   </div>
 </section>
 
 <section class="py-12 md:py-16 bg-white">
   <div class="max-w-4xl mx-auto px-4">
     <p class="text-center mb-8">
-      <span class="inline-block bg-purple-100 text-primary-800 px-4 py-2 rounded-full font-semibold">
+      <span class="inline-block bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-semibold">
         {{ site.data.languages.languages | size }} language packs available
       </span>
     </p>
@@ -21,7 +21,7 @@ description: Download language packs for AnySoftKeyboard. Support for 50+ langua
     <div class="grid gap-3">
       {% for language in site.data.languages.languages %}
       <article class="language-card">
-        <img src="{{ language.icon }}" alt="{{ language.name }} flag" class="w-8 h-6 rounded shadow-sm" loading="lazy" width="32" height="24">
+        <img src="{{ language.icon }}" alt="{{ language.name }} flag" class="w-8 h-6 rounded shadow-sm object-cover" loading="lazy" width="32" height="24">
         <span class="flex-1 font-medium text-gray-900">{{ language.name }}</span>
         <div class="flex gap-2">
           {% if language.github and language.github != "" %}
