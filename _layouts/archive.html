@@ -1,23 +1,32 @@
 ---
-layout: page
+layout: default
 ---
+<section class="section-gradient text-white text-center py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ page.title }}</h1>
+  </div>
+</section>
 
-<div class="text-container">
-	{% assign blog = site.pages | where: "path", "blog/index.html" | first %}
-
-	{% if blog.title %}
-		<h2>{{ blog.title }}</h2>
-	{% endif %}
-
-	{% if blog.description %}
-		<p class="subtext">{{ blog.description }}</p>
-	{% endif %}
-
-	<div class="center-text">
-		<span class="blog-filter cross"><a href="{{ site.baseurl }}/blog/">{{ page.title | capitalize }}</a></span>
-	</div>
-
-	<ul class="blog-posts">
-		{% include list-posts.html posts=page.posts %}
-	</ul>
-</div>
+<section class="py-12 md:py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    {% if page.posts.size > 0 %}
+    <ul class="space-y-8" role="list">
+      {% for post in page.posts %}
+      <li class="blog-post">
+        <h2 class="text-2xl font-bold mb-2">
+          <a href="{{ post.url | relative_url }}" class="text-gray-900 hover:text-primary-700">{{ post.title }}</a>
+        </h2>
+        <p class="text-gray-500 text-sm mb-4">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        </p>
+        {% if post.excerpt %}
+        <p class="text-gray-600">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center text-gray-500">No posts in this archive.</p>
+    {% endif %}
+  </div>
+</section>

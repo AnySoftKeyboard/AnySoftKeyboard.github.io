@@ -1,0 +1,12 @@
+{
+  "name": "anysoftkeyboard-website",
+  "version": "1.0.0",
+  "description": "AnySoftKeyboard official website",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./css/input.css -o ./css/main.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./css/input.css -o ./css/main.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0"
+  }
+}

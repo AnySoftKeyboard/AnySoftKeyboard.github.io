@@ -1,14 +1,41 @@
 ---
-title: 
-description: 
+layout: default
+title: Download AnySoftKeyboard
+description: Get AnySoftKeyboard from Google Play or F-Droid. Free and open source Android keyboard.
 ---
-		<h2 class="editable">You can download <strong>AnySoftKeyboard</strong> from Play Store or F-Droid.</h2>
-		<div class="center-text">
-		<a href="https://play.google.com/store/apps/details?id=com.menny.android.anysoftkeyboard" target="_blank" rel="noopener"><img class="not-full" src="/images/en-play-badge.png" alt="Play Store" width="250px" height="74px"/></a>
-		<a href="https://f-droid.org/repository/browse/?fdid=com.menny.android.anysoftkeyboard" target="_blank" rel="noopener"><img class="not-full" src="/images/f-droid.png" alt="F-Droid" width="212px" height="74px"/></a>
-		</div>
-		<div class="center-text">
-			<p>Feeling adventurous? Sign up for the Beta channel <a href="https://play.google.com/apps/testing/com.menny.android.anysoftkeyboard" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> here</a> (Served via Google Play Store).</p>
-			<p>Feeling <i>very</i> adventurous? opt-in to the Alpha channel by also joining the <a href="https://groups.google.com/g/anysoftkeyboard-alpha-testers" target="_blank" rel="noopener">Testers Google group</a>.</p>
-		</div>
+{% assign content = site.data.site.download %}
 
+<section class="section-gradient text-white text-center py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ content.title }}</h1>
+    <p class="text-lg text-white/90 mt-2">{{ content.subtitle }}</p>
+  </div>
+</section>
+
+<section class="py-12 md:py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <div class="flex flex-wrap gap-8 justify-center mb-12">
+      {% for store in content.stores %}
+      <a href="{{ store.url }}" class="transition-transform hover:-translate-y-1" target="_blank" rel="noopener noreferrer" aria-label="Download on {{ store.name }}">
+        <img src="{{ store.image }}" alt="{{ store.image_alt }}" loading="lazy" class="h-16 w-auto" width="192" height="64">
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="bg-purple-50 rounded-2xl p-8 max-w-xl mx-auto">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">{{ content.beta.title }}</h2>
+      <ul class="space-y-4 text-left" role="list">
+        {% for channel in content.beta.channels %}
+        <li class="feature-item text-gray-600">
+          <strong class="text-gray-900">{{ channel.name }}</strong>: {{ channel.description }}
+          {% if channel.link_text %}
+          <a href="{{ channel.url }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 hover:underline">{{ channel.link_text }}</a>
+          {% else %}
+          <a href="{{ channel.url }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 hover:underline">Sign up here</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

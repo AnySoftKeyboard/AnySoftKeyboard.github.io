@@ -1,18 +1,17 @@
 ---
 layout: default
 ---
-<div class="content">
-	<section class="page">
-		<div class="container {% if page.full_width %}max-container{% endif %}">
-			{% if page.heading %}
-				<h2>{{ page.heading }}</h2>
-			{% elsif page.title and page.layout != 'archive' %}
-				<h2>{{ page.title }}</h2>
-			{% endif %}
-			{% if page.description %}
-				<p class="subtext">{{ page.description }}</p>
-			{% endif %}
-			{{ content }}
-		</div>
-	</section>
-</div>
+<section class="section-gradient text-white text-center py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="text-lg text-white/90 mt-2">{{ page.subtitle }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="py-12 md:py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 prose prose-lg prose-purple">
+    {{ content }}
+  </div>
+</section>

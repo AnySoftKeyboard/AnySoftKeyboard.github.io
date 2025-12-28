@@ -1,33 +1,53 @@
 ---
-title: Our team
-description: ASK consists of a community that dedicate their time to the project development.
+layout: default
+title: About AnySoftKeyboard
+description: Meet the team behind AnySoftKeyboard. Open source keyboard for Android.
 ---
+<section class="section-gradient text-white text-center py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white">Our <span class="text-purple-200">Team</span></h1>
+    <p class="text-lg text-white/90 mt-2">The people behind AnySoftKeyboard</p>
+  </div>
+</section>
 
-<ul class="staff">
-	{% for person in site.staff_members %}
-		<li>
-			<div class="square-image"><img src="{% include relative-src.html src=person.image_path %}" alt="{{ person.name }}"/></div>
-			<div class="name"><a target="_blank" href="{{ person.link }}">{{ person.name }}</a></div>
-			<div class="position">{{ person.position }}</div>
-		</li>
-	{% endfor %}
-</ul>
+<section class="py-12 md:py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+      {% for member in site.staff_members %}
+      {% unless member.name == "_defaults" %}
+      <li class="staff-card">
+        <figure class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
+          <img src="{{ member.image_path }}" alt="{{ member.name }}" loading="lazy" class="w-full h-full object-cover" width="128" height="128">
+        </figure>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">
+          {% if member.link %}
+          <a href="{{ member.link }}" target="_blank" rel="noopener noreferrer" class="hover:text-primary-700">{{ member.name }}</a>
+          {% else %}
+          {{ member.name }}
+          {% endif %}
+        </h3>
+        <p class="text-gray-600 text-sm">{{ member.position }}</p>
+      </li>
+      {% endunless %}
+      {% endfor %}
+    </ul>
 
-<div class="center-text">
-<h3>License</h3>
-<pre>
-Copyright 2018 Menny Even-Danan
+    <div class="mt-16 bg-purple-50 rounded-2xl p-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">License</h2>
+      <p class="text-gray-600 mb-4">AnySoftKeyboard is licensed under the Apache License, Version 2.0</p>
+      <pre class="bg-white p-4 rounded-lg text-sm overflow-x-auto text-gray-700">Copyright 2018 Menny Even-Danan
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">http://www.apache.org/licenses/LICENSE-2.0</a>
+    http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.
-</pre>
-</div>
+limitations under the License.</pre>
+    </div>
+  </div>
+</section>

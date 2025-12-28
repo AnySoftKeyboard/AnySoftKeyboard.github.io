@@ -1,38 +1,51 @@
 ---
-title: Languages
-description: Below you'll find a list of language packs and where you can download them
+layout: default
+title: Language Packs
+description: Download language packs for AnySoftKeyboard. Support for 50+ languages with dictionaries and keyboards.
 ---
+<section class="section-gradient text-white text-center py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white">Available <span class="text-purple-200">Language Packs</span></h1>
+    <p class="text-lg text-white/90 mt-2">Download additional languages with keyboards and dictionaries</p>
+  </div>
+</section>
 
-<section>
-	{% for language in site.data.languages.languages %}
-	<div>
-	<p class="languages-list"><span class="flag-container"><img src="{{ language.icon }}" alt="{{ language.name }} flag" class="language-flag"></span> {{ language.name }}
-	
-	{% if language.github == nil or language.github == "" %}
-	<img class="no-link-found not-full-icon" src="/images/github.png" width="32px" height="32px"/></a>
-	{% else %}
-	<a href="{{ language.github }}"><img class="not-full-icon" src="/images/github.png" alt="{{ language.name }} on github" width="32px" height="32px"/></a>
-	{% endif %}
-	
-	{% if language.f-droid == nil or language.f-droid == "" %}
-	<img class="no-link-found not-full-icon" src="/images/fdroid.png" width="32px" height="32px" alt="F-Droid icon"/></a>
-	{% else %}
-	<a href="{{ language.f-droid }}"><img class="not-full-icon" src="/images/fdroid.png" alt="{{ language.name }} on f-droid" width="32px" height="32px"/></a>
-	{% endif %}
-	
-	{% if language.play == nil or language.play == "" %}
-	<img class="no-link-found not-full-icon" src="/images/play.png" width="32px" height="32px"/></a>
-	{% else %}
-	<a href="{{ language.play }}"><img class="not-full-icon" src="/images/play.png" alt="{{ language.name }} on Google Play Store" width="32px" height="32px"/></a>
-	{% endif %}
-	</p>
-	</div>
-	{% endfor %}
+<section class="py-12 md:py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <p class="text-center mb-8">
+      <span class="inline-block bg-purple-100 text-primary-800 px-4 py-2 rounded-full font-semibold">
+        {{ site.data.languages.languages | size }} language packs available
+      </span>
+    </p>
 
-	{% assign total = 0 %}
-	{% for language in site.data.languages.languages %}
-	  {% assign total = total | plus: 1 %}
-	{% endfor %}
-
-	<p>Number of languages available: {{ total }}</p>
+    <div class="grid gap-3">
+      {% for language in site.data.languages.languages %}
+      <article class="language-card">
+        <img src="{{ language.icon }}" alt="{{ language.name }} flag" class="w-8 h-6 rounded shadow-sm" loading="lazy" width="32" height="24">
+        <span class="flex-1 font-medium text-gray-900">{{ language.name }}</span>
+        <div class="flex gap-2">
+          {% if language.github and language.github != "" %}
+          <a href="{{ language.github }}" target="_blank" rel="noopener noreferrer" aria-label="{{ language.name }} on GitHub" class="opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/images/github.png" alt="GitHub" class="w-7 h-7" width="28" height="28" loading="lazy">
+          </a>
+          {% endif %}
+          {% if language.f-droid and language.f-droid != "" %}
+          <a href="{{ language.f-droid }}" target="_blank" rel="noopener noreferrer" aria-label="{{ language.name }} on F-Droid" class="opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/images/fdroid.png" alt="F-Droid" class="w-7 h-7" width="28" height="28" loading="lazy">
+          </a>
+          {% else %}
+          <img src="/images/fdroid.png" alt="Not on F-Droid" class="w-7 h-7 grayscale opacity-30" width="28" height="28" loading="lazy">
+          {% endif %}
+          {% if language.play and language.play != "" and language.play != "#" %}
+          <a href="{{ language.play }}" target="_blank" rel="noopener noreferrer" aria-label="{{ language.name }} on Google Play" class="opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/images/play.png" alt="Google Play" class="w-7 h-7" width="28" height="28" loading="lazy">
+          </a>
+          {% else %}
+          <img src="/images/play.png" alt="Not on Google Play" class="w-7 h-7 grayscale opacity-30" width="28" height="28" loading="lazy">
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
 </section>
