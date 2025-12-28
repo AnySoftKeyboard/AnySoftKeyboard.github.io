@@ -6,60 +6,60 @@ description: Free, open source Android keyboard with multi-language support, the
 {% assign content = site.data.site %}
 
 <!-- Hero Section -->
-<section class="section-gradient pattern-dots text-white text-center py-16 md:py-24 relative">
+<section class="hero-bg pattern-dots text-white text-center py-16 md:py-24">
   <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
       {{ content.hero.title }} <span class="text-purple-200">{{ content.hero.title_emphasis }}</span>
     </h1>
-    <p class="text-xl md:text-2xl text-white/90 mb-8">
-      {{ content.hero.subtitle }} <strong class="text-white">{{ content.hero.subtitle_emphasis }}</strong> {{ content.hero.subtitle_2 }}
+    <p class="text-xl md:text-2xl text-white/85 mb-8">
+      {{ content.hero.subtitle }} <strong>{{ content.hero.subtitle_emphasis }}</strong> {{ content.hero.subtitle_2 }}
     </p>
-    <a href="{{ content.hero.cta_link }}" class="btn btn-outline btn-lg">
+    <a href="{{ content.hero.cta_link }}" class="btn btn-outline-white btn-lg">
       {{ content.hero.cta_text }}
     </a>
-    <figure class="mt-12 max-w-sm mx-auto drop-shadow-2xl">
-      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" loading="lazy" class="w-full" width="640" height="auto">
+    <figure class="mt-12 max-w-sm mx-auto">
+      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" loading="lazy" class="w-full drop-shadow-2xl" width="640" height="auto">
     </figure>
   </div>
 </section>
 
 <!-- Features Section -->
-<section class="py-16 md:py-24 bg-white">
+<section class="py-16 md:py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          {{ content.features.title }} <span class="text-primary-700">{{ content.features.title_suffix }}</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          {{ content.features.title }} <span class="text-purple-700">{{ content.features.title_suffix }}</span>
         </h2>
         <ul class="space-y-3" role="list">
           {% for feature in content.features.items %}
-          <li class="feature-item text-gray-600">{{ feature }}</li>
+          <li class="feature-item">{{ feature }}</li>
           {% endfor %}
         </ul>
       </div>
       <figure class="order-first md:order-last">
-        <img src="{{ content.features.image }}" alt="{{ content.features.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow" width="640" height="auto">
+        <img src="{{ content.features.image }}" alt="{{ content.features.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl" width="640" height="auto">
       </figure>
     </div>
   </div>
 </section>
 
 <!-- Community Help Section -->
-<section class="py-16 md:py-24 bg-purple-50">
+<section class="py-16 md:py-20 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <figure>
-        <img src="{{ content.community.image }}" alt="{{ content.community.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow" width="640" height="auto">
+        <img src="{{ content.community.image }}" alt="{{ content.community.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl" width="640" height="auto">
       </figure>
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          {{ content.community.title }} <span class="text-primary-700">{{ content.community.title_suffix }}</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          {{ content.community.title }} <span class="text-purple-700">{{ content.community.title_suffix }}</span>
         </h2>
-        <p class="text-gray-600 mb-6">{{ content.community.description }}</p>
+        <p class="text-gray-600 mb-6 text-lg">{{ content.community.description }}</p>
         <ul class="space-y-3 mb-8" role="list">
           {% for link in content.community.links %}
           <li class="feature-item">
-            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 hover:text-primary-600 font-medium">{{ link.name }}</a>
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-purple-700 hover:text-purple-800 font-medium">{{ link.name }}</a>
           </li>
           {% endfor %}
         </ul>
@@ -72,49 +72,48 @@ description: Free, open source Android keyboard with multi-language support, the
 </section>
 
 <!-- Languages Section -->
-<section class="py-16 md:py-24 bg-white">
+<section class="py-16 md:py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          {{ content.languages_section.title }} <span class="text-primary-700">{{ content.languages_section.title_emphasis }}</span> {{ content.languages_section.title_suffix }}
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          {{ content.languages_section.title }} <span class="text-purple-700">{{ content.languages_section.title_emphasis }}</span> {{ content.languages_section.title_suffix }}
         </h2>
-        <p class="text-gray-600 mb-8">{{ content.languages_section.description }}</p>
+        <p class="text-gray-600 mb-8 text-lg">{{ content.languages_section.description }}</p>
         <a href="{{ content.languages_section.link_url }}" class="btn btn-primary">
           {{ content.languages_section.link_text }}
         </a>
       </div>
       <figure>
-        <img src="{{ content.languages_section.image }}" alt="{{ content.languages_section.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow" width="640" height="auto">
+        <img src="{{ content.languages_section.image }}" alt="{{ content.languages_section.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl" width="640" height="auto">
       </figure>
     </div>
   </div>
 </section>
 
 <!-- Testimonial Section -->
-<section class="py-16 md:py-24 bg-purple-50">
+<section class="py-16 md:py-20 bg-gray-50">
   <div class="max-w-3xl mx-auto px-4 text-center">
-    <figure class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
-      <img src="{{ content.testimonial.image }}" alt="{{ content.testimonial.image_alt }}" loading="lazy" class="w-full h-full object-cover" width="96" height="96">
+    <figure class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
+      <img src="{{ content.testimonial.image }}" alt="{{ content.testimonial.image_alt }}" loading="lazy" class="w-full h-full object-cover" width="80" height="80">
     </figure>
-    <blockquote class="relative text-xl md:text-2xl text-gray-700 italic mb-6">
-      <span class="absolute -top-4 left-1/2 -translate-x-1/2 text-6xl text-purple-300 font-serif">"</span>
-      {{ content.testimonial.quote }}
+    <blockquote class="text-xl md:text-2xl text-gray-700 italic mb-4">
+      "{{ content.testimonial.quote }}"
     </blockquote>
-    <cite class="text-primary-700 font-semibold not-italic">— {{ content.testimonial.author }}</cite>
+    <cite class="text-purple-700 font-semibold not-italic">— {{ content.testimonial.author }}</cite>
   </div>
 </section>
 
 <!-- CTA / Donate Section -->
-<section class="section-gradient pattern-dots text-white text-center py-16 md:py-24">
+<section class="hero-bg pattern-dots text-white text-center py-16 md:py-20">
   <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
       {{ content.donate.title }} <span class="text-purple-200">{{ content.donate.title_emphasis }}</span>
     </h2>
-    <p class="text-xl text-white/90 mb-8">{{ content.donate.subtitle }}</p>
+    <p class="text-xl text-white/85 mb-8">{{ content.donate.subtitle }}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       {% for button in content.donate.buttons %}
-      <a href="{{ button.url }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+      <a href="{{ button.url }}" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">
         {{ button.text }}
       </a>
       {% endfor %}

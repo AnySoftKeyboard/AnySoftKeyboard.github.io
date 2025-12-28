@@ -5,10 +5,10 @@ description: Get AnySoftKeyboard from Google Play or F-Droid. Free and open sour
 ---
 {% assign content = site.data.site.download %}
 
-<section class="section-gradient text-white text-center py-12 md:py-16">
+<section class="hero-bg text-white text-center py-10 md:py-14">
   <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ content.title }}</h1>
-    <p class="text-lg text-white/90 mt-2">{{ content.subtitle }}</p>
+    <h1 class="text-3xl md:text-4xl font-bold">{{ content.title }}</h1>
+    <p class="text-lg text-white/80 mt-2">{{ content.subtitle }}</p>
   </div>
 </section>
 
@@ -22,16 +22,16 @@ description: Get AnySoftKeyboard from Google Play or F-Droid. Free and open sour
       {% endfor %}
     </div>
 
-    <div class="bg-purple-50 rounded-2xl p-8 max-w-xl mx-auto">
+    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 max-w-xl mx-auto text-left">
       <h2 class="text-xl font-bold text-gray-900 mb-4">{{ content.beta.title }}</h2>
-      <ul class="space-y-4 text-left" role="list">
+      <ul class="space-y-4" role="list">
         {% for channel in content.beta.channels %}
-        <li class="feature-item text-gray-600">
-          <strong class="text-gray-900">{{ channel.name }}</strong>: {{ channel.description }}
+        <li class="feature-item">
+          <strong class="text-gray-900">{{ channel.name }}</strong>: <span class="text-gray-600">{{ channel.description }}</span>
           {% if channel.link_text %}
-          <a href="{{ channel.url }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 hover:underline">{{ channel.link_text }}</a>
+          <a href="{{ channel.url }}" target="_blank" rel="noopener noreferrer" class="text-purple-700 hover:underline">{{ channel.link_text }}</a>
           {% else %}
-          <a href="{{ channel.url }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 hover:underline">Sign up here</a>
+          <a href="{{ channel.url }}" target="_blank" rel="noopener noreferrer" class="text-purple-700 hover:underline">Sign up here</a>
           {% endif %}
         </li>
         {% endfor %}

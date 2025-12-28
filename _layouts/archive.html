@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<section class="section-gradient text-white text-center py-12 md:py-16">
+<section class="hero-bg text-white text-center py-10 md:py-14">
   <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ page.title }}</h1>
+    <h1 class="text-3xl md:text-4xl font-bold">{{ page.title }}</h1>
   </div>
 </section>
 
@@ -14,7 +14,7 @@ layout: default
       {% for post in page.posts %}
       <li class="blog-post">
         <h2 class="text-2xl font-bold mb-2">
-          <a href="{{ post.url | relative_url }}" class="text-gray-900 hover:text-primary-700">{{ post.title }}</a>
+          <a href="{{ post.url | relative_url }}" class="text-gray-900 hover:text-purple-700">{{ post.title }}</a>
         </h2>
         <p class="text-gray-500 text-sm mb-4">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
@@ -26,7 +26,7 @@ layout: default
       {% endfor %}
     </ul>
     {% else %}
-    <p class="text-center text-gray-500">No posts in this archive.</p>
+    <p class="text-center text-gray-500 py-12">No posts in this archive.</p>
     {% endif %}
   </div>
 </section>
