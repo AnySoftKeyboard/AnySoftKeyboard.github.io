@@ -31,4 +31,4 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer --allow-hash-href=true --ignore-urls "/hachyderm.io/,/play.google.com/,/f-droid.org/" ./_site
+        run: bundle exec htmlproofer --allow-hash-href --ignore-urls "hachyderm.io,play.google.com,f-droid.org" ./_site
