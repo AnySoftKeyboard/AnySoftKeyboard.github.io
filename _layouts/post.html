@@ -1,26 +1,33 @@
 ---
-layout: page
+layout: default
 ---
-<div class="blog-post text-container">
-	{% include post-title.html post=page %}
+<section class="section-gradient text-white text-center py-12 md:py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-white">{{ page.title }}</h1>
+    <p class="text-white/80 mt-3">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.author %} • {{ page.author }}{% endif %}
+    </p>
+  </div>
+</section>
 
-	<div class="post-content">
-		{{ content }}
-
-		<div class="author">
-			{% assign author_id = page.author_staff_member | prepend: "/staff_members/" | append: "/" %}
-			{% assign author = site.staff_members | where: "url", author_id | first %}
-			<div class="square-image"><img src="{% include relative-src.html src=author.image_path %}" alt="{{ author.name }}"/></div>
-			<p class="blurb">{{ author.blurb }}</p>
-		</div>
-
-		<div class="blog-navigation">
-			{% if page.previous.url %}
-				<a class="prev" href="{% include relative-src.html src=page.previous.url %}">&laquo; {{ page.previous.title }}</a>
-			{% endif %}
-			{% if page.next.url %}
-				<a class="next" href="{% include relative-src.html src=page.next.url %}">{{ page.next.title }} &raquo;</a>
-			{% endif %}
-		</div>
-	</div>
-</div>
+<article class="py-12 md:py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 prose prose-lg prose-purple">
+    {{ content }}
+    
+    {% if page.author %}
+    {% assign author = site.staff_members | where: "name", page.author | first %}
+    <aside class="not-prose mt-12 flex items-center gap-4 p-6 bg-purple-50 rounded-2xl">
+      {% if author.image_path %}
+      <img src="{{ author.image_path }}" alt="{{ author.name }}" loading="lazy" class="w-16 h-16 rounded-full" width="64" height="64">
+      {% endif %}
+      <div>
+        <strong class="text-gray-900">{{ page.author }}</strong>
+        {% if author.position %}
+        <p class="text-gray-600 text-sm">{{ author.position }}</p>
+        {% endif %}
+      </div>
+    </aside>
+    {% endif %}
+  </div>
+</article>

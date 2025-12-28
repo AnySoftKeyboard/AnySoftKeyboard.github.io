@@ -1,0 +1,118 @@
+# Site-wide content configuration
+# Centralized text and settings
+
+hero:
+  title: "The only Android keyboard"
+  title_emphasis: "you'll ever need"
+  subtitle: "Free as in speech"
+  subtitle_emphasis: "and"
+  subtitle_2: "Free as in beer."
+  cta_text: "Download Now"
+  cta_link: "/download/"
+  image: "/images/phone_graphic.png"
+  image_alt: "AnySoftKeyboard running on Android"
+
+features:
+  title: "Features"
+  title_suffix: "of AnySoftKeyboard"
+  image: "/images/features_graphic.png"
+  image_alt: "AnySoftKeyboard features overview"
+  items:
+    - "Supports lots of languages via external packages"
+    - "Physical keyboards are supported as well"
+    - "Themes (skin) support"
+    - "Incognito Mode - will not track your typing"
+    - "Word suggestions, and Next-Word suggestions"
+    - "Automatic correction can be customized, or turned off entirely"
+    - "Gesture typing"
+    - "Dark mode, automatic (based on system) and manual"
+    - "Power saving mode, disables various features to save battery"
+    - "Per-app tint, the keyboard changes color depending on the app"
+    - "Voice input"
+    - "Compact modes: Split and Compact to left/right"
+    - "Special keyboard for text fields which require only numbers, dates, email or URI addresses"
+    - "Plenty of emojis"
+    - "...and many more!"
+
+community:
+  title: "Help"
+  title_suffix: "from the community"
+  image: "/images/help_community.png"
+  image_alt: "Community support illustration"
+  description: "The official discussions and support community"
+  links:
+    - name: "GitHub Discussions"
+      url: "https://github.com/AnySoftKeyboard/AnySoftKeyboard/discussions"
+      icon: "github"
+    - name: "Mastodon"
+      url: "https://hachyderm.io/@anysoftkeyboard"
+      icon: "mastodon"
+    - name: "Wiki"
+      url: "https://github.com/AnySoftKeyboard/AnySoftKeyboard/wiki"
+      icon: "book"
+  cta:
+    text: "Report Issues"
+    url: "https://github.com/AnySoftKeyboard/AnySoftKeyboard/issues"
+    icon: "github"
+
+languages_section:
+  title: "Numerous"
+  title_emphasis: "languages"
+  title_suffix: "available"
+  image: "/images/languages_graphic.png"
+  image_alt: "Multiple language support"
+  description: "There are many languages with multiple dictionaries, auto-correction and keyboards that are supported."
+  link_text: "View all languages"
+  link_url: "/languages/"
+
+testimonial:
+  quote: "AnySoftKeyboard is the keyboard we have been waiting for; lightweight, fast, accurate and private!"
+  author: "The Open Source Community"
+  image: "/images/avatar.png"
+  image_alt: "Open source community"
+
+donate:
+  title: "Support"
+  title_emphasis: "the development"
+  subtitle: "Help us keep AnySoftKeyboard free and open source"
+  buttons:
+    - text: "Donate via PayPal"
+      url: "https://www.paypal.me/menny"
+      icon: "paypal"
+    - text: "GitHub Sponsors"
+      url: "https://github.com/sponsors/menny"
+      icon: "github"
+
+download:
+  title: "Download AnySoftKeyboard"
+  subtitle: "Available on Google Play Store and F-Droid"
+  stores:
+    - name: "Google Play"
+      url: "https://play.google.com/store/apps/details?id=com.menny.android.anysoftkeyboard"
+      image: "/images/en-play-badge.png"
+      image_alt: "Get it on Google Play"
+    - name: "F-Droid"
+      url: "https://f-droid.org/repository/browse/?fdid=com.menny.android.anysoftkeyboard"
+      image: "/images/f-droid.png"
+      image_alt: "Get it on F-Droid"
+  beta:
+    title: "Try Beta Versions"
+    channels:
+      - name: "Beta Channel"
+        description: "Sign up for early access"
+        url: "https://play.google.com/apps/testing/com.menny.android.anysoftkeyboard"
+      - name: "Alpha Channel"
+        description: "For the adventurous! Join the"
+        url: "https://groups.google.com/g/anysoftkeyboard-alpha-testers"
+        link_text: "Alpha Testers Google Group"
+
+social:
+  github: "https://github.com/AnySoftKeyboard/AnySoftKeyboard"
+  mastodon: "https://hachyderm.io/@anysoftkeyboard"
+
+copyright:
+  year_start: 2018
+  holder: "Menny Even-Danan"
+  license: "Apache License, Version 2.0"
+  license_url: "http://www.apache.org/licenses/LICENSE-2.0"
+

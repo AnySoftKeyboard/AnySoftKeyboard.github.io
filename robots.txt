@@ -1,6 +1,4 @@
----
-layout: null
-sitemap: false
----
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Allow: /
+
+Sitemap: https://anysoftkeyboard.github.io/sitemap.xml

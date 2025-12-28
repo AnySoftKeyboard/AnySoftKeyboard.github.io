@@ -8,15 +8,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build Tailwind CSS
+        run: npm run build:css
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true # Runs bundle install and caches gems
+          bundler-cache: true
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
       - name: Run HTMLProofer
-        run: bundle exec htmlproofer --allow-hash-href=true ./_site
+        run: bundle exec htmlproofer --allow-hash-href=true --ignore-urls "/hachyderm.io/,/play.google.com/,/f-droid.org/" ./_site

@@ -1,91 +1,123 @@
 ---
-title: AnySoftKeyboard
+layout: default
+title: AnySoftKeyboard - The Open Source Keyboard for Android
+description: Free, open source Android keyboard with multi-language support, themes, and privacy features.
 ---
-<section class="hero" style="padding-bottom: 0px;">
-	<div class="text-container">
-		<h1 class="editable">The only Android keyboard <strong>you'll ever need</strong></h1>
-		<p class="subtext editable">Free as in speech <strong>and</strong> Free as in beer.</p>
-		<div class="cta button alt"><a href="/download">Download Now</a></div>
-		<div class="text-container" style="max-width: 600px;">
-			<img src="/images/phone_graphic.png" alt="Pixel 3 screenshot" class="editable" />
-		</div>
-	</div>
+{% assign content = site.data.site %}
+
+<!-- Hero Section -->
+<section class="section-gradient pattern-dots text-white text-center py-16 md:py-24 relative">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white">
+      {{ content.hero.title }} <span class="text-purple-200">{{ content.hero.title_emphasis }}</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-white/90 mb-8">
+      {{ content.hero.subtitle }} <strong class="text-white">{{ content.hero.subtitle_emphasis }}</strong> {{ content.hero.subtitle_2 }}
+    </p>
+    <a href="{{ content.hero.cta_link }}" class="btn btn-outline btn-lg">
+      {{ content.hero.cta_text }}
+    </a>
+    <figure class="mt-12 max-w-sm mx-auto drop-shadow-2xl">
+      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" loading="lazy" class="w-full" width="640" height="auto">
+    </figure>
+  </div>
 </section>
 
-<div class="content">
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2><strong>Features</strong> of AnySoftKeyboard</h2>
-					<ul>
-					<li>Supports lots of languages via external packages</li>
-					<li>Physical keyboards are supported as well</li>
-					<li>Themes (skin) support</li>
-					<li>Incognito Mode - will not track your typing</li>
-					<li>Word suggestions, and Next-Word suggestions</li>
-					<li>Automatic correction can be customized, or turned off entirely. External packages include word lists that can be freely mixed. You can use a French layout and get suggestions for German and Russian!</li>
-					<li>Gesture typing</li>
-					<li>Dark mode, automatic (based on system) and manual</li>
-					<li>Power saving mode, disables various features to save battery</li>
-					<li>Per-app tint, the keyboard changes color depending on the app</li>
-					<li>Voice input</li>
-					<li>Compact modes: Split and Compact to left/right</li>
-					<li>Special keyboard for text fields which require only numbers, dates, email or URI addresses.</li>
-					<li>Plenty of emojis</li>
-					<p>..and many more!</p>
-					</ul>
-			</div>
-			<div class="image">
-				<img src="/images/features_graphic.png" alt="Features" class="card editable" />
-			</div>
-		</div>
-	</section>
+<!-- Features Section -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          {{ content.features.title }} <span class="text-primary-700">{{ content.features.title_suffix }}</span>
+        </h2>
+        <ul class="space-y-3" role="list">
+          {% for feature in content.features.items %}
+          <li class="feature-item text-gray-600">{{ feature }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <figure class="order-first md:order-last">
+        <img src="{{ content.features.image }}" alt="{{ content.features.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow" width="640" height="auto">
+      </figure>
+    </div>
+  </div>
+</section>
 
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2><strong>Help</strong> from the community</h2>
-				The official discussions and support community is on <a href="https://github.com/AnySoftKeyboard/AnySoftKeyboard/discussions" target="_blank" ref="noopener"><i class="fab fa-github"></i> GitHub</a>. You can also find us on <a rel="me" href="https://hachyderm.io/@anysoftkeyboard"><i class="fab fa-mastodon"></i> Mastodon</a>.<br />
-				Read our <a href="https://github.com/AnySoftKeyboard/AnySoftKeyboard/wiki" target="_blank" rel="noopener">wiki</a> for more information about usage and code.</p>
-				<div class="button" style="margin-bottom: 30px;"><a href="https://github.com/AnySoftKeyboard/AnySoftKeyboard/issues" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub Issues</a></div>
-			</div>
-			<div class="image">
-				<img src="/images/help_community.png" alt="Community" class="card editable" />
-			</div>
-		</div>
-	</section>
+<!-- Community Help Section -->
+<section class="py-16 md:py-24 bg-purple-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <figure>
+        <img src="{{ content.community.image }}" alt="{{ content.community.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow" width="640" height="auto">
+      </figure>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          {{ content.community.title }} <span class="text-primary-700">{{ content.community.title_suffix }}</span>
+        </h2>
+        <p class="text-gray-600 mb-6">{{ content.community.description }}</p>
+        <ul class="space-y-3 mb-8" role="list">
+          {% for link in content.community.links %}
+          <li class="feature-item">
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-primary-700 hover:text-primary-600 font-medium">{{ link.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        <a href="{{ content.community.cta.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          {{ content.community.cta.text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2>Numerous <strong>languages</strong> available</h2>
-				<p>There are many <a href="/languages" target="_blank" rel="noopener">languages</a> with multiple dictionaries, auto-correction and keyboards that are supported.</p>
-			</div>
-			<div class="image">
-				<img src="/images/languages_graphic.png" alt="Languages" class="card editable" />
-			</div>
-		</div>
-	</section>
+<!-- Languages Section -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          {{ content.languages_section.title }} <span class="text-primary-700">{{ content.languages_section.title_emphasis }}</span> {{ content.languages_section.title_suffix }}
+        </h2>
+        <p class="text-gray-600 mb-8">{{ content.languages_section.description }}</p>
+        <a href="{{ content.languages_section.link_url }}" class="btn btn-primary">
+          {{ content.languages_section.link_text }}
+        </a>
+      </div>
+      <figure>
+        <img src="{{ content.languages_section.image }}" alt="{{ content.languages_section.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow" width="640" height="auto">
+      </figure>
+    </div>
+  </div>
+</section>
 
-	<section class="testimonial">
-		<div class="container flex">
-			<div class="testimonial-block">
-				<div class="square-image"><img src="/images/avatar.png" alt="John Doe" class="editable"></div>
-				<blockquote>
-					<p class="editable">AnySoftKeyboard is the keyboard we have been waiting for; lightweight, fast, accurate and private!</p>
-					<p class="editable author">John Doe - User</p>
-				</blockquote>
-			</div>
-		</div>
-	</section>
+<!-- Testimonial Section -->
+<section class="py-16 md:py-24 bg-purple-50">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <figure class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
+      <img src="{{ content.testimonial.image }}" alt="{{ content.testimonial.image_alt }}" loading="lazy" class="w-full h-full object-cover" width="96" height="96">
+    </figure>
+    <blockquote class="relative text-xl md:text-2xl text-gray-700 italic mb-6">
+      <span class="absolute -top-4 left-1/2 -translate-x-1/2 text-6xl text-purple-300 font-serif">"</span>
+      {{ content.testimonial.quote }}
+    </blockquote>
+    <cite class="text-primary-700 font-semibold not-italic">— {{ content.testimonial.author }}</cite>
+  </div>
+</section>
 
-	<section class="bottom-cta">
-		<h2 class="editable"><strong>Donate</strong> to help develop this application</h2>
-		<div class="button alt">
-			<a href="https://www.paypal.me/menny" target="_blank" rel="noopener">Donate via PayPal</a>
-		</div>
-		<div class="button alt mt-3">
-			<a href="https://github.com/sponsors/menny" target="_blank" rel="noopener">Donate via GitHub Sponsors</a>
-		</div>
-	</section>
-</div>
+<!-- CTA / Donate Section -->
+<section class="section-gradient pattern-dots text-white text-center py-16 md:py-24">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+      {{ content.donate.title }} <span class="text-purple-200">{{ content.donate.title_emphasis }}</span>
+    </h2>
+    <p class="text-xl text-white/90 mb-8">{{ content.donate.subtitle }}</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      {% for button in content.donate.buttons %}
+      <a href="{{ button.url }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+        {{ button.text }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

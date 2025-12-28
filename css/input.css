@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+/* Theme customization */
+@theme {
+  /* Colors */
+  --color-primary-50: oklch(0.97 0.02 295);
+  --color-primary-100: oklch(0.94 0.04 295);
+  --color-primary-200: oklch(0.88 0.08 295);
+  --color-primary-300: oklch(0.78 0.14 295);
+  --color-primary-400: oklch(0.68 0.18 295);
+  --color-primary-500: oklch(0.58 0.22 295);
+  --color-primary-600: oklch(0.52 0.24 295);
+  --color-primary-700: oklch(0.48 0.22 295);
+  --color-primary-800: oklch(0.40 0.18 295);
+  --color-primary-900: oklch(0.32 0.14 295);
+  --color-primary-950: oklch(0.22 0.10 295);
+
+  /* Typography */
+  --font-sans: 'Overpass', system-ui, -apple-system, sans-serif;
+}
+
+/* Font Faces */
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/overpass-v2-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Overpass';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/overpass-v2-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/overpass-v2-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/overpass-v2-latin-800.woff2') format('woff2');
+}
+
+/* View Transitions API */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 300ms;
+}
+
+/* Utility classes */
+@utility skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background-color: var(--color-primary-800);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  z-index: 50;
+  transition: top 0.2s;
+  &:focus {
+    top: 1rem;
+  }
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+@utility btn-primary {
+  background-color: var(--color-primary-800);
+  color: white;
+  &:hover {
+    background-color: var(--color-primary-900);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  }
+}
+
+@utility btn-outline {
+  border: 2px solid rgb(255 255 255 / 0.4);
+  color: white;
+  &:hover {
+    background-color: white;
+    color: var(--color-primary-800);
+  }
+}
+
+@utility btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+@utility section-gradient {
+  background: linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-primary-600) 50%, var(--color-primary-500) 100%);
+}
+
+@utility nav-link {
+  color: rgb(255 255 255 / 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  transition: all 0.15s;
+  position: relative;
+  text-decoration: none;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: all 0.15s;
+    transform: translateX(-50%);
+  }
+  &:hover {
+    background-color: rgb(255 255 255 / 0.1);
+    color: white;
+    &::after {
+      width: 60%;
+    }
+  }
+  &[aria-current="page"] {
+    background-color: rgb(255 255 255 / 0.1);
+    color: white;
+    &::after {
+      width: 60%;
+    }
+  }
+}
+
+@utility feature-item {
+  position: relative;
+  padding-left: 1.5rem;
+  &::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: 700;
+  }
+}
+
+@utility language-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgb(250 245 255);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  &:hover {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+}
+
+@utility staff-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgb(250 245 255);
+  border-radius: 1rem;
+  transition: all 0.3s;
+  &:hover {
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    transform: translateY(-4px);
+  }
+}
+
+@utility footer-link {
+  color: rgb(255 255 255 / 0.7);
+  transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
+}
+
+@utility blog-post {
+  padding: 2rem;
+  background-color: rgb(250 245 255);
+  border-radius: 1rem;
+}
+
+@utility pattern-dots {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header, .site-footer, .skip-link {
+    display: none !important;
+  }
+}
