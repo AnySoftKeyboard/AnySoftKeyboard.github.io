@@ -330,10 +330,11 @@
 }
 
 @utility shimmer-text {
-  background: linear-gradient(90deg, white 0%, rgba(255,255,255,0.5) 50%, white 100%);
+  background: linear-gradient(90deg, currentColor 0%, rgba(255,255,255,0.7) 50%, currentColor 100%);
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: shimmer 3s linear infinite;
 }
 
@@ -466,29 +467,25 @@
   animation: spin 20s linear infinite;
 }
 
+/* Slide up animations - start visible for better compatibility */
 @utility animate-slide-up {
-  opacity: 0;
-  animation: slide-up 0.8s ease-out forwards;
+  animation: slide-up 0.8s ease-out;
 }
 
 @utility animate-slide-up-1 {
-  opacity: 0;
-  animation: slide-up 0.8s ease-out 0.1s forwards;
+  animation: slide-up 0.8s ease-out 0.1s backwards;
 }
 
 @utility animate-slide-up-2 {
-  opacity: 0;
-  animation: slide-up 0.8s ease-out 0.2s forwards;
+  animation: slide-up 0.8s ease-out 0.2s backwards;
 }
 
 @utility animate-slide-up-3 {
-  opacity: 0;
-  animation: slide-up 0.8s ease-out 0.3s forwards;
+  animation: slide-up 0.8s ease-out 0.3s backwards;
 }
 
 @utility animate-slide-up-4 {
-  opacity: 0;
-  animation: slide-up 0.8s ease-out 0.4s forwards;
+  animation: slide-up 0.8s ease-out 0.4s backwards;
 }
 
 @utility glow-purple {
