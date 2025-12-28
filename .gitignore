@@ -6,7 +6,6 @@ _site
 
 # Node
 node_modules
-package-lock.json
 
 # OS
 .DS_Store
