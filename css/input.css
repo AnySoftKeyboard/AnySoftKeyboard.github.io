@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Tell Tailwind where to find classes */
+@source "../**/*.html";
+@source "../**/*.md";
+@source "../_data/**/*.yml";
+
 /* Theme customization */
 @theme {
   /* Colors */
