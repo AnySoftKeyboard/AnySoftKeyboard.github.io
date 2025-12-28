@@ -6,24 +6,24 @@ description: Free, open source Android keyboard with multi-language support, the
 {% assign content = site.data.site %}
 
 <!-- Hero Section -->
-<section class="hero-bg pattern-dots text-white py-20 md:py-32 relative">
+<section class="hero-bg pattern-dots text-white py-20 md:py-32 relative overflow-hidden">
   <!-- Floating keyboard keys decoration -->
-  <div class="floating-key top-[15%] left-[8%] animate-float" aria-hidden="true">A</div>
-  <div class="floating-key top-[25%] right-[10%] animate-float-delayed" style="animation-delay: 1s;" aria-hidden="true">S</div>
-  <div class="floating-key bottom-[30%] left-[12%] animate-float-slow" style="animation-delay: 2s;" aria-hidden="true">K</div>
-  <div class="floating-key top-[60%] right-[8%] animate-float" style="animation-delay: 3s;" aria-hidden="true">⌨</div>
-  <div class="floating-key bottom-[15%] right-[15%] animate-float-delayed" style="animation-delay: 0.5s;" aria-hidden="true">✓</div>
-  <div class="floating-key top-[45%] left-[5%] animate-float-slow hidden md:block" style="animation-delay: 1.5s;" aria-hidden="true">🌍</div>
+  <div class="floating-key top-[15%] left-[8%]" style="animation-delay: 0s;" aria-hidden="true">A</div>
+  <div class="floating-key top-[25%] right-[10%]" style="animation-delay: 1s;" aria-hidden="true">S</div>
+  <div class="floating-key bottom-[30%] left-[12%]" style="animation-delay: 2s;" aria-hidden="true">K</div>
+  <div class="floating-key top-[60%] right-[8%]" style="animation-delay: 3s;" aria-hidden="true">⌨</div>
+  <div class="floating-key bottom-[15%] right-[15%]" style="animation-delay: 0.5s;" aria-hidden="true">✓</div>
+  <div class="floating-key top-[45%] left-[5%] hidden md:block" style="animation-delay: 1.5s;" aria-hidden="true">🌍</div>
   
   <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6">
       {{ content.hero.title }}
-      <span class="block mt-2 text-purple-200 shimmer-text">{{ content.hero.title_emphasis }}</span>
+      <span class="block mt-2 text-purple-200">{{ content.hero.title_emphasis }}</span>
     </h1>
-    <p class="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto animate-slide-up-1">
+    <p class="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto">
       {{ content.hero.subtitle }} <strong class="text-white">{{ content.hero.subtitle_emphasis }}</strong> {{ content.hero.subtitle_2 }}
     </p>
-    <div class="flex flex-wrap gap-4 justify-center mb-12 animate-slide-up-2">
+    <div class="flex flex-wrap gap-4 justify-center mb-12">
       <a href="{{ content.hero.cta_link }}" class="btn btn-glow btn-lg">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
         {{ content.hero.cta_text }}
@@ -33,8 +33,8 @@ description: Free, open source Android keyboard with multi-language support, the
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
       </a>
     </div>
-    <figure class="max-w-md mx-auto animate-slide-up-3">
-      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" class="w-full drop-shadow-2xl animate-float-slow" width="640" height="auto">
+    <figure class="max-w-md mx-auto">
+      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" class="w-full drop-shadow-2xl" width="640" height="auto">
     </figure>
   </div>
   
@@ -194,7 +194,7 @@ description: Free, open source Android keyboard with multi-language support, the
 <section class="py-20 md:py-28 bg-white">
   <div class="max-w-4xl mx-auto px-4">
     <div class="testimonial-card text-center py-12 px-8 md:px-16">
-      <figure class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden shadow-xl ring-4 ring-purple-100 animate-bounce-subtle">
+      <figure class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden shadow-xl ring-4 ring-purple-100">
         <img src="{{ content.testimonial.image }}" alt="{{ content.testimonial.image_alt }}" loading="lazy" class="w-full h-full object-cover" width="96" height="96">
       </figure>
       <blockquote class="text-2xl md:text-3xl text-gray-700 font-medium mb-6 leading-relaxed">
