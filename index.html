@@ -6,115 +6,226 @@ description: Free, open source Android keyboard with multi-language support, the
 {% assign content = site.data.site %}
 
 <!-- Hero Section -->
-<section class="hero-bg pattern-dots text-white text-center py-16 md:py-24">
-  <div class="max-w-4xl mx-auto px-4">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-      {{ content.hero.title }} <span class="text-purple-200">{{ content.hero.title_emphasis }}</span>
+<section class="hero-bg pattern-dots text-white py-20 md:py-32 relative">
+  <!-- Floating keyboard keys decoration -->
+  <div class="floating-key top-[15%] left-[8%] animate-float" aria-hidden="true">A</div>
+  <div class="floating-key top-[25%] right-[10%] animate-float-delayed" style="animation-delay: 1s;" aria-hidden="true">S</div>
+  <div class="floating-key bottom-[30%] left-[12%] animate-float-slow" style="animation-delay: 2s;" aria-hidden="true">K</div>
+  <div class="floating-key top-[60%] right-[8%] animate-float" style="animation-delay: 3s;" aria-hidden="true">⌨</div>
+  <div class="floating-key bottom-[15%] right-[15%] animate-float-delayed" style="animation-delay: 0.5s;" aria-hidden="true">✓</div>
+  <div class="floating-key top-[45%] left-[5%] animate-float-slow hidden md:block" style="animation-delay: 1.5s;" aria-hidden="true">🌍</div>
+  
+  <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
+      {{ content.hero.title }}
+      <span class="block mt-2 text-purple-200 shimmer-text">{{ content.hero.title_emphasis }}</span>
     </h1>
-    <p class="text-xl md:text-2xl text-white/85 mb-8">
-      {{ content.hero.subtitle }} <strong>{{ content.hero.subtitle_emphasis }}</strong> {{ content.hero.subtitle_2 }}
+    <p class="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto animate-slide-up-1">
+      {{ content.hero.subtitle }} <strong class="text-white">{{ content.hero.subtitle_emphasis }}</strong> {{ content.hero.subtitle_2 }}
     </p>
-    <a href="{{ content.hero.cta_link }}" class="btn btn-outline-white btn-lg">
-      {{ content.hero.cta_text }}
-    </a>
-    <figure class="mt-12 max-w-sm mx-auto">
-      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" loading="lazy" class="w-full drop-shadow-2xl" width="640" height="auto">
+    <div class="flex flex-wrap gap-4 justify-center mb-12 animate-slide-up-2">
+      <a href="{{ content.hero.cta_link }}" class="btn btn-glow btn-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        {{ content.hero.cta_text }}
+      </a>
+      <a href="#features" class="btn btn-outline-white btn-lg">
+        Learn More
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </a>
+    </div>
+    <figure class="max-w-md mx-auto animate-slide-up-3">
+      <img src="{{ content.hero.image }}" alt="{{ content.hero.image_alt }}" class="w-full drop-shadow-2xl animate-float-slow" width="640" height="auto">
     </figure>
+  </div>
+  
+  <!-- Gradient overlay at bottom -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-16 bg-white relative -mt-16 z-20">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="text-gray-600 font-medium">Languages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10M+</div>
+        <div class="text-gray-600 font-medium">Downloads</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="text-gray-600 font-medium">Open Source</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="text-gray-600 font-medium">Data Collected</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Features Section -->
-<section class="py-16 md:py-20 bg-white">
+<section id="features" class="py-20 md:py-28 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-          {{ content.features.title }} <span class="text-purple-700">{{ content.features.title_suffix }}</span>
-        </h2>
-        <ul class="space-y-3" role="list">
-          {% for feature in content.features.items %}
-          <li class="feature-item">{{ feature }}</li>
-          {% endfor %}
-        </ul>
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+        {{ content.features.title }} <span class="gradient-text">{{ content.features.title_suffix }}</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need for a better typing experience</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Multi-Language</h3>
+        <p class="text-gray-600">Supports 50+ languages via external packages with dictionaries and keyboards.</p>
       </div>
-      <figure class="order-first md:order-last">
-        <img src="{{ content.features.image }}" alt="{{ content.features.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl" width="640" height="auto">
-      </figure>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Themes & Skins</h3>
+        <p class="text-gray-600">Customize your keyboard with beautiful themes, including dark mode support.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Incognito Mode</h3>
+        <p class="text-gray-600">Type privately without any tracking or word learning when you need it.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Predictions</h3>
+        <p class="text-gray-600">Word suggestions and next-word predictions that learn from your typing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👆</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Gesture Typing</h3>
+        <p class="text-gray-600">Swipe to type for faster input with accurate gesture recognition.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Power Saving</h3>
+        <p class="text-gray-600">Battery-friendly mode that disables heavy features to save power.</p>
+      </div>
+    </div>
+    
+    <div class="text-center mt-12">
+      <p class="text-gray-500 text-lg">...and many more features including voice input, emojis, compact modes, and more!</p>
     </div>
   </div>
 </section>
 
-<!-- Community Help Section -->
-<section class="py-16 md:py-20 bg-gray-50">
+<!-- Community Section -->
+<section class="py-20 md:py-28 bg-white">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <figure>
-        <img src="{{ content.community.image }}" alt="{{ content.community.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl" width="640" height="auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <figure class="relative">
+        <img src="{{ content.community.image }}" alt="{{ content.community.image_alt }}" loading="lazy" class="rounded-3xl shadow-2xl" width="640" height="auto">
+        <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 hidden md:block">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900">Active Community</div>
+              <div class="text-gray-500 text-sm">Always here to help</div>
+            </div>
+          </div>
+        </div>
       </figure>
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-          {{ content.community.title }} <span class="text-purple-700">{{ content.community.title_suffix }}</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          {{ content.community.title }} <span class="gradient-text">{{ content.community.title_suffix }}</span>
         </h2>
-        <p class="text-gray-600 mb-6 text-lg">{{ content.community.description }}</p>
-        <ul class="space-y-3 mb-8" role="list">
+        <p class="text-xl text-gray-600 mb-8">{{ content.community.description }}</p>
+        <ul class="space-y-4 mb-10" role="list">
           {% for link in content.community.links %}
-          <li class="feature-item">
-            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-purple-700 hover:text-purple-800 font-medium">{{ link.name }}</a>
+          <li class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="text-lg text-gray-700 hover:text-purple-700 font-medium transition-colors">{{ link.name }}</a>
           </li>
           {% endfor %}
         </ul>
-        <a href="{{ content.community.cta.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <a href="{{ content.community.cta.url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
           {{ content.community.cta.text }}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Languages Section -->
-<section class="py-16 md:py-20 bg-white">
+<!-- Languages Preview Section -->
+<section class="py-20 md:py-28 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-          {{ content.languages_section.title }} <span class="text-purple-700">{{ content.languages_section.title_emphasis }}</span> {{ content.languages_section.title_suffix }}
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          {{ content.languages_section.title }} <span class="gradient-text">{{ content.languages_section.title_emphasis }}</span> {{ content.languages_section.title_suffix }}
         </h2>
-        <p class="text-gray-600 mb-8 text-lg">{{ content.languages_section.description }}</p>
-        <a href="{{ content.languages_section.link_url }}" class="btn btn-primary">
+        <p class="text-xl text-gray-600 mb-8">{{ content.languages_section.description }}</p>
+        
+        <!-- Language previews -->
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 font-medium">🇺🇸 English</span>
+          <span class="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 font-medium">🇪🇸 Español</span>
+          <span class="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 font-medium">🇩🇪 Deutsch</span>
+          <span class="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 font-medium">🇫🇷 Français</span>
+          <span class="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 font-medium">🇮🇹 Italiano</span>
+          <span class="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 text-gray-700 font-medium">🇵🇹 Português</span>
+          <span class="px-4 py-2 bg-purple-100 rounded-full text-purple-700 font-medium">+40 more</span>
+        </div>
+        
+        <a href="{{ content.languages_section.link_url }}" class="btn btn-outline btn-lg">
           {{ content.languages_section.link_text }}
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
       <figure>
-        <img src="{{ content.languages_section.image }}" alt="{{ content.languages_section.image_alt }}" loading="lazy" class="rounded-2xl shadow-xl" width="640" height="auto">
+        <img src="{{ content.languages_section.image }}" alt="{{ content.languages_section.image_alt }}" loading="lazy" class="rounded-3xl shadow-2xl" width="640" height="auto">
       </figure>
     </div>
   </div>
 </section>
 
 <!-- Testimonial Section -->
-<section class="py-16 md:py-20 bg-gray-50">
-  <div class="max-w-3xl mx-auto px-4 text-center">
-    <figure class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
-      <img src="{{ content.testimonial.image }}" alt="{{ content.testimonial.image_alt }}" loading="lazy" class="w-full h-full object-cover" width="80" height="80">
-    </figure>
-    <blockquote class="text-xl md:text-2xl text-gray-700 italic mb-4">
-      "{{ content.testimonial.quote }}"
-    </blockquote>
-    <cite class="text-purple-700 font-semibold not-italic">— {{ content.testimonial.author }}</cite>
+<section class="py-20 md:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="testimonial-card text-center py-12 px-8 md:px-16">
+      <figure class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden shadow-xl ring-4 ring-purple-100 animate-bounce-subtle">
+        <img src="{{ content.testimonial.image }}" alt="{{ content.testimonial.image_alt }}" loading="lazy" class="w-full h-full object-cover" width="96" height="96">
+      </figure>
+      <blockquote class="text-2xl md:text-3xl text-gray-700 font-medium mb-6 leading-relaxed">
+        "{{ content.testimonial.quote }}"
+      </blockquote>
+      <cite class="text-purple-700 font-bold text-lg not-italic">— {{ content.testimonial.author }}</cite>
+    </div>
   </div>
 </section>
 
 <!-- CTA / Donate Section -->
-<section class="hero-bg pattern-dots text-white text-center py-16 md:py-20">
-  <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+<section class="hero-bg pattern-dots pattern-grid text-white py-20 md:py-28 relative overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute top-1/4 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" aria-hidden="true"></div>
+  <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" aria-hidden="true"></div>
+  
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <h2 class="text-3xl md:text-5xl font-bold mb-6">
       {{ content.donate.title }} <span class="text-purple-200">{{ content.donate.title_emphasis }}</span>
     </h2>
-    <p class="text-xl text-white/85 mb-8">{{ content.donate.subtitle }}</p>
+    <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">{{ content.donate.subtitle }}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       {% for button in content.donate.buttons %}
-      <a href="{{ button.url }}" class="btn btn-outline-white" target="_blank" rel="noopener noreferrer">
+      <a href="{{ button.url }}" class="btn btn-outline-white btn-lg group" target="_blank" rel="noopener noreferrer">
+        {% if button.icon == "paypal" %}
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z"/></svg>
+        {% elsif button.icon == "github" %}
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        {% endif %}
         {{ button.text }}
+        <svg class="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
       {% endfor %}
     </div>
