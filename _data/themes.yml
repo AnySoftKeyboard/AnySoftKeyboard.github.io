@@ -1,7 +1,7 @@
 languages:
 - name: "Classic_pc"
   play: "https://play.google.com/store/apps/details?id=com.anysoftkeyboard.theme.classic_pc"
-  f-droid: "https://f-droid.org/en/packages/com.anysoftkeyboard.theme.classic_pc/"
+  f-droid: ""
   github: "https://github.com/AnySoftKeyboard/AnySoftKeyboard/tree/main/addons/themes/classic_pc/apk"
   icon: "https://raw.githubusercontent.com/AnySoftKeyboard/AnySoftKeyboard/refs/heads/main/addons/themes/classic_pc/apk/flag/flag.png"
 - name: "Ics"
@@ -16,6 +16,6 @@ languages:
   icon: "https://raw.githubusercontent.com/AnySoftKeyboard/AnySoftKeyboard/refs/heads/main/addons/themes/israel64/apk/flag/flag.png"
 - name: "Three_d"
   play: "#"
-  f-droid: ""
+  f-droid: "https://f-droid.org/en/packages/com.anysoftkeyboard.theme.three_d/"
   github: "https://github.com/AnySoftKeyboard/AnySoftKeyboard/tree/main/addons/themes/three_d/apk"
   icon: "https://raw.githubusercontent.com/AnySoftKeyboard/AnySoftKeyboard/refs/heads/main/addons/themes/three_d/apk/flag/flag.png"
